@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Additional Pylons</title>
+	<title>This is what happens when you get too into HotS before a creative assiginment</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://code.jquery.com/jquery.js"></script>
 	
 </head>
@@ -9,21 +12,45 @@
 	
 	<script src="assets/javascript/game.js"></script>
 
-	<h1>You must construct additional pylons</h1>
+	<h1 class="title">You Must Construct Additional Pylons</h1>
 
-	<div class="fluffText">Greeting noble probe of the Templar.  We must act quickly and establish a forward base on this contested world.  However, due to the intense warp storms in this region of space, it is impossible for us to determine how many minerals a successful warp-in will require.  You can warp in a pylon form one of four of our allies' bases, but the cost to warp in any one of them is random. Your total mineral allotment is displayed below.  Please use this amount as efficiently as possible, as any excess cannot be diverted to warping in our warriors.  Once you have used up your current mineral allotment, a new one will be assigined to you.  Good luck!</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">Greeting noble probe of the Templar!  We must act quickly and establish a forward base on this contested world.  However, due to the intense warp storms in this region of space, it is impossible for us to determine how many minerals a successful warp-in will require.  You can warp in a pylon form one of four of our allies' bases, but the cost to warp in any one of them is random. Your total mineral allotment is displayed below.  Please use this amount as efficiently as possible, as any excess cannot be diverted to warping in our warriors.  Once you have used up your current mineral allotment, click on the 'minerals' counter to be allotted more.  Good luck!</div>
+		</div>
+	</div>
 
-	<h1 id="goal">TotalMinerals: <span id="numberToUse"></span>00</h1>
-	<h1 id="totalNumber">Current Use: <span id="current"></span>00</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2 id="goal">Total Minerals: <span id="numberToUse"></span>00</h2>
+			</div>
+		</div>
+		<div class=row>
+			<div class=col-md-6>
+				<h2 id="totalNumber">Current Use: <span id="current"></span>00</h2>
+			</div>
+		</div>
 
-	<img class="pylon" id="khalai" src="#" alt="Khalai">
-	<img class="pylon" id="nerazim" src="#" alt="Nerazim">
-	<img class="pylon" id="talDarim" src="#" alt="Tal'Darim">
-	<img class="pylon" id="purifier" src="#" alt="Purifier">
-	
-	<br><br>
 
-	<div class="scoreBoard">Completed Bases: <span id="win"></span><br>Overcosted Bases: <span id="loss"></span></div>
+
+		<div class="row">
+			<div class="col-md-2">
+				<img class="pylon" id="khalai" src="assets/images/kahlai.jpg" alt="Khalai">
+			</div>
+			<div class="col-md-2">
+				<img class="pylon" id="nerazim" src="assets/images/nerazim.jpg" alt="Nerazim">
+			</div>
+			<div class="col-md-2">
+				<img class="pylon" id="talDarim" src="assets/images/taldarim.jpg" alt="Tal'Darim">
+			</div>
+			<div class="col-md-2">
+				<img class="pylon" id="purifier" src="assets/images/purifier.jpg" alt="Purifier">
+			</div>
+		</div>
+		<div class="row">
+			<div class="scoreBoard"><h3>Completed Bases: <span id="win"></span><h3><h3>Overcosted Bases: <span id="loss"></span></h3></div>
+		</div>
 
 
 

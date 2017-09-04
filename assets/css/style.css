@@ -1,0 +1,20 @@
+body {
+	  background: url("../../assets/images/probius.jpg");
+	  background-size: 100% auto;
+
+
+}
+
+.row {
+	color: white;
+
+}
+
+.title {
+	color: white;
+	padding-left: 10px;
+}
+
+.pylon{
+	width: 100px;
+}
