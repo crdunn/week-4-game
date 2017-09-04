@@ -16,5 +16,9 @@ body {
 }
 
 .pylon{
-	width: 100px;
+	width: 50px;
+}
+
+#instructions{
+	padding: 10px;
 }

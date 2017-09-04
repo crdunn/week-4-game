@@ -6,24 +6,23 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://code.jquery.com/jquery.js"></script>
+<!-- 	<script src="assets/javascript/game.js"></script> -->
 	
 </head>
 <body>
 	
-	<script src="assets/javascript/game.js"></script>
-
 	<h1 class="title">You Must Construct Additional Pylons</h1>
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">Greeting noble probe of the Templar!  We must act quickly and establish a forward base on this contested world.  However, due to the intense warp storms in this region of space, it is impossible for us to determine how many minerals a successful warp-in will require.  You can warp in a pylon form one of four of our allies' bases, but the cost to warp in any one of them is random. Your total mineral allotment is displayed below.  Please use this amount as efficiently as possible, as any excess cannot be diverted to warping in our warriors.  Once you have used up your current mineral allotment, click on the 'minerals' counter to be allotted more.  Good luck!</div>
+			<div class="col-md-6" id="instructions">Greeting noble probe of the Templar!  We must act quickly and establish a forward base on this contested world.  However, due to the intense warp storms in this region of space, it is impossible for us to determine how many minerals a successful warp-in will require.  You can warp in a pylon form one of four of our allies' bases, but the cost to warp in any one of them is random. Your total mineral allotment is displayed below.  Please use this amount as efficiently as possible, as any excess cannot be diverted to warping in our warriors.  Once you have used up your current mineral allotment, click on the 'minerals' counter to be allotted more.  Good luck!</div>
 		</div>
 	</div>
 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<h2 id="goal">Total Minerals: <span id="numberToUse"></span>00</h2>
+				<h2 id="goal"><span id="gather"></span>Minerals: <span id="numberToUse"></span>00</h2>
 			</div>
 		</div>
 		<div class=row>
@@ -35,18 +34,27 @@
 
 
 		<div class="row">
-			<div class="col-md-2">
+		<div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Choose a Pylon Type</h3>
+          </div>
+          <div class="panel-body">
+			<div class="col-md-3">
 				<img class="pylon" id="khalai" src="assets/images/kahlai.jpg" alt="Khalai">
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<img class="pylon" id="nerazim" src="assets/images/nerazim.jpg" alt="Nerazim">
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<img class="pylon" id="talDarim" src="assets/images/taldarim.jpg" alt="Tal'Darim">
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<img class="pylon" id="purifier" src="assets/images/purifier.jpg" alt="Purifier">
 			</div>
+			</div>
+		</div>
+		</div>
 		</div>
 		<div class="row">
 			<div class="scoreBoard"><h3>Completed Bases: <span id="win"></span><h3><h3>Overcosted Bases: <span id="loss"></span></h3></div>
@@ -66,12 +74,19 @@
 		var randArray
 		var win = 0
 		var loss = 0
+		var audioBegin = document.createElement("audio");
+      		audioBegin.setAttribute("src", "Assets/images/pylons.mp3");
+		var audioLoss = document.createElement("audio");
+      		audioLoss.setAttribute("src", "Assets/images/minerals.mp3");
 
 
 		$("#goal").on("click", function() {
 			goalNumber = Math.floor(Math.random()*101)+19;
 			counter = 0
+        	audioBegin.play();
 			$("#numberToUse").text(goalNumber);
+			$("#current").text(counter);
+			$("#gather").text("Total ")
 			rand1 = options[Math.floor(Math.random()*options.length)];
 			rand2 = options[Math.floor(Math.random()*options.length)];
 			rand3 = options[Math.floor(Math.random()*options.length)];
@@ -90,12 +105,14 @@
 			alert ("You win!");
 			win += 1;
 			$("#win").text(win);
+			$("#gather").text("Gather ")
 			}
 
 			else if (counter >= goalNumber) {
-			alert("You lose!!");
+			audioLoss.play();
 			loss +=1;
 			$("#loss").text(loss);
+			$("#gather").text("Gather ")
 			}
 
 		 });
@@ -108,12 +125,14 @@
 			alert ("You win!");
 			win += 1;
 			$("#win").text(win);
+			$("#gather").text("Gather ")
 			}
 
 			else if (counter >= goalNumber) {
-			alert("You lose!!");
+			audioLoss.play();
 			loss +=1;
 			$("#loss").text(loss);
+			$("#gather").text("Gather ")
 			}
 
 		 });
@@ -126,12 +145,14 @@
 			alert ("You win!");
 			win += 1;
 			$("#win").text(win);
+			$("#gather").text("Gather ")
 			}
 
 			else if (counter >= goalNumber) {
-			alert("You lose!!");
+			audioLoss.play();
 			loss +=1;
 			$("#loss").text(loss);
+			$("#gather").text("Gather ")
 			}
 
 		 });
@@ -144,12 +165,14 @@
 			alert ("You win!");
 			win += 1;
 			$("#win").text(win);
+			$("#gather").text("Gather ")
 			}
 
 			else if (counter >= goalNumber) {
-			alert("You lose!!");
+			audioLoss.play();
 			loss +=1;
 			$("#loss").text(loss);
+			$("#gather").text("Gather ")
 			}
 
 		 });
