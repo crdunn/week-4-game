@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Additional Pylons</title>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	
+</head>
+<body>
+	
+	<script src="assets/javascript/game.js"></script>
+
+	<h1>You must construct additional pylons</h1>
+
+	<div class="fluffText">Greeting noble probe of the Templar.  We must act quickly and establish a forward base on this contested world.  However, due to the intense warp storms in this region of space, it is impossible for us to determine how many minerals a successful warp-in will require.  You can warp in a pylon form one of four of our allies' bases, but the cost to warp in any one of them is random. Your total mineral allotment is displayed below.  Please use this amount as efficiently as possible, as any excess cannot be diverted to warping in our warriors.  Once you have used up your current mineral allotment, a new one will be assigined to you.  Good luck!</div>
+
+	<h1 id="goal">TotalMinerals: <span id="numberToUse"></span>00</h1>
+	<h1 id="totalNumber">Current Use: <span id="current"></span>00</h1>
+
+	<img class="pylon" id="khalai" src="#" alt="Khalai">
+	<img class="pylon" id="nerazim" src="#" alt="Nerazim">
+	<img class="pylon" id="talDarim" src="#" alt="Tal'Darim">
+	<img class="pylon" id="purifier" src="#" alt="Purifier">
+	
+	<br><br>
+
+	<div class="scoreBoard">Completed Bases: <span id="win"></span><br>Overcosted Bases: <span id="loss"></span></div>
+
+
+
+	<script>
+
+		var counter = 0;
+		var goalNumber
+		var options = [1,2,3,4,5,6,7,8,9,10,11,12];
+		var rand1
+		var rand2
+		var rand3
+		var rand4
+		var randArray
+		var win = 0
+		var loss = 0
+
+
+		$("#goal").on("click", function() {
+			goalNumber = Math.floor(Math.random()*101)+19;
+			counter = 0
+			$("#numberToUse").text(goalNumber);
+			rand1 = options[Math.floor(Math.random()*options.length)];
+			rand2 = options[Math.floor(Math.random()*options.length)];
+			rand3 = options[Math.floor(Math.random()*options.length)];
+			rand4 = options[Math.floor(Math.random()*options.length)];
+			randArray = [rand1,rand2,rand3,rand4];
+			console.log (randArray);
+
+		});
+
+
+		$("#khalai").on("click", function() {
+		  counter += rand1;
+		  $("#current").text(counter);
+
+		  	if (counter === goalNumber) {
+			alert ("You win!");
+			win += 1;
+			$("#win").text(win);
+			}
+
+			else if (counter >= goalNumber) {
+			alert("You lose!!");
+			loss +=1;
+			$("#loss").text(loss);
+			}
+
+		 });
+
+		$("#nerazim").on("click", function() {
+		  counter += rand2;
+		  $("#current").text(counter);
+
+		  	if (counter === goalNumber) {
+			alert ("You win!");
+			win += 1;
+			$("#win").text(win);
+			}
+
+			else if (counter >= goalNumber) {
+			alert("You lose!!");
+			loss +=1;
+			$("#loss").text(loss);
+			}
+
+		 });
+
+		$("#talDarim").on("click", function() {
+		  counter += rand3;
+		  $("#current").text(counter);
+
+		  	if (counter === goalNumber) {
+			alert ("You win!");
+			win += 1;
+			$("#win").text(win);
+			}
+
+			else if (counter >= goalNumber) {
+			alert("You lose!!");
+			loss +=1;
+			$("#loss").text(loss);
+			}
+
+		 });
+
+		$("#purifier").on("click", function() {
+		  counter += rand4;
+		  $("#current").text(counter);
+
+		  	if (counter === goalNumber) {
+			alert ("You win!");
+			win += 1;
+			$("#win").text(win);
+			}
+
+			else if (counter >= goalNumber) {
+			alert("You lose!!");
+			loss +=1;
+			$("#loss").text(loss);
+			}
+
+		 });
+
+
+
+
+
+	</script>
+
+</body>
+</html>
