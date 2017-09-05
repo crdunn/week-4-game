@@ -19,6 +19,10 @@ body {
 	width: 50px;
 }
 
+.panel {
+	margin-left: 10px;
+}
+
 #instructions{
 	padding: 10px;
 }
